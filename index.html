@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/game.js"></script>
+		<script src="js/myPlane.js"></script>
+		<script src="js/dom.js"></script>
+		<script src="js/zidan.js"></script>
+		<script src="js/makePlane.js"></script>
+		<script src="js/smallPlane.js"></script>
+		<script src="js/middlePlane.js"></script>
+		<script src="js/largePlane.js"></script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="logo"></div>
+			<ul id="options">
+				<li value="4">困难</li>
+				<li value="3">一般</li>
+				<li value="2">简单</li>
+				<li value="1">非常简单</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var options = document.querySelectorAll("#options > li")
+		for(var i = 0; i < options.length; i++) {
+			options[i].addEventListener("click", function(e) {
+				new Game(this.value).start()
+			})
+		}
+	</script>
+</html>
